@@ -1,10 +1,12 @@
 package question3;
 
+
+
 /**
  * NFP121 TpIntroduction, usage de BlueJ et du "Submitter".
  * 
  * @version septembre 2009
- * @author à compléter
+ * @author ï¿½ complï¿½ter
  * @see java.lang.String, java.lang.Math
  */
 public class AuditeurCNAM {
@@ -16,15 +18,15 @@ public class AuditeurCNAM {
     private String matricule;
 
     /**
-     * "Création", le constructeur d'un auditeur avec son nom, son prénom et son
+     * "Crï¿½ation", le constructeur d'un auditeur avec son nom, son prï¿½nom et son
      * matricule.
      * 
      * @param nom
      *            le nom de l'auditeur
      * @param prenom
-     *            son prénom
+     *            son prï¿½nom
      * @param matricule
-     *            sur la carte d'inscription, près de la photo
+     *            sur la carte d'inscription, prï¿½s de la photo
      */
     public AuditeurCNAM(String nom, String prenom, String matricule) {
         this.nom = nom;
@@ -33,19 +35,21 @@ public class AuditeurCNAM {
     }
 
     /**
-     * le login au Cnam : 6 premières lettres du nom suivies de la première
-     * lettre du prénom séparées de '_' . le login retourné est en minuscules,
-     * le trait d'union, ou spéciaux <i>(pour unix)</i> sont remplacés par des
-     * '_' pas de caractères accentués pour le login voir les classes
-     * prédéfines, java.lang.String : les méthodes replaceAll, toLowerCase et
-     * substring java.lang.Math : la méthode min<br>
+     * le login au Cnam : 6 premiï¿½res lettres du nom suivies de la premiï¿½re
+     * lettre du prï¿½nom sï¿½parï¿½es de '_' . le login retournï¿½ est en minuscules,
+     * le trait d'union, ou spï¿½ciaux <i>(pour unix)</i> sont remplacï¿½s par des
+     * '_' pas de caractï¿½res accentuï¿½s pour le login voir les classes
+     * prï¿½dï¿½fines, java.lang.String : les mï¿½thodes replaceAll, toLowerCase et
+     * substring java.lang.Math : la mï¿½thode min<br>
      * <b>BlueJ : Menu Aide</b>
      * 
-     * @return le login du Cnam simplifié, sans les adaptations dues aux
+     * @return le login du Cnam simplifiï¿½, sans les adaptations dues aux
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String nom=nom().length()>6 ? nom().substring(0,6) : nom();
+        String prenom=prenom().substring(0,1);
+        return (nom+"_"+prenom).toLowerCase().replaceAll("-","_").replaceAll("é","e");//
     }
 
     /**
@@ -54,16 +58,16 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+        return nom;//
     }
 
     /**
-     * Lecture du prénom de l'auditeur.
+     * Lecture du prï¿½nom de l'auditeur.
      * 
-     * @return son prénom
+     * @return son prï¿½nom
      */
     public String prenom() {
-        return null;// à compléter
+        return prenom;// 
     }
 
     /**
@@ -72,13 +76,13 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+        return matricule;// 
     }
 
     /**
-     * méthode toString ( méthode redéfinie de la classe Object).
+     * mï¿½thode toString ( mï¿½thode redï¿½finie de la classe Object).
      * 
-     * @return la concaténation du nom, du prénom et du login, selon cette
+     * @return la concatï¿½nation du nom, du prï¿½nom et du login, selon cette
      *         syntaxe
      *         <code>nom() + " " + prenom() +  " login : " + login()</code>
      */
