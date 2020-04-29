@@ -78,7 +78,13 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals("pierre", auditeur1.prenom());
         assertEquals("paul_p", auditeur1.login());
     }
-
+public void test_nouveau() {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("a",
+                "s", "2");
+        assertEquals("a", auditeur1.nom());
+        assertEquals("s", auditeur1.prenom());
+        assertEquals("a_s", auditeur1.login());
+    }
     public void test_nom_court_bis() {
         question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("thon",
                 "germon", "12345");
