@@ -49,7 +49,8 @@ public class AuditeurCNAM {
     public String login() {
         String nom=nom().length()>6 ? nom().substring(0,6) : nom();
         String prenom=prenom().substring(0,1);
-        return (nom+"_"+prenom).toLowerCase().replaceAll("-","_").replaceAll("é","e");//
+        return (nom+"_"+prenom).toLowerCase().replaceAll("-","_")
+        .replaceAll("é","e").replaceAll(" ","_").replaceAll(",","_");//
     }
 
     /**
