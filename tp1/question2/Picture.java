@@ -15,7 +15,7 @@ import question1.Triangle;
  * @author Michael Kolling and David J. Barnes
  * @version 1.1 (24 May 2001)
  */
-public class Picture extends Circle {
+public class Picture {
     private Square wall;
     private Square window;
     private Triangle roof;
@@ -52,27 +52,13 @@ public class Picture extends Circle {
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(180);
-        sun.moveVertical();
+        sun.moveVertical(-10);
+        
         sun.changeSize(60);
         sun.makeVisible();
     }
-/**
-     * Slowly move the circle vertically by 'distance' pixels.
-     */
-    public void slowMoveVertical(int distance) {
-        int delta;
-
-        if (distance < 0) {
-            delta = -1;
-            distance = -distance;
-        } else {
-            delta = 1;
-        }
-
-        for (int i = 0; i < distance; i++) {
-            yPosition += delta;
-            draw();
-        }
+public void slowMoveVertical(int distance) {
+      sun.slowMoveVertical(distance);
     }
     /**
      * Change this picture to black/white display
