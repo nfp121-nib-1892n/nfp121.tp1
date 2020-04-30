@@ -21,14 +21,16 @@ public class Picture {
     private Triangle roof;
     private Circle sun;
     private Circle sun2;
-
+private boolean fixe=true;
     /**
      * Constructor for objects of class Picture
      */
     public Picture() {
         // nothing to do... instance variables are automatically set to null
     }
-
+public void fixOrUnfixTerre(){
+    fixe=!fixe;
+}
     /**
      * Draw this picture.
      */
@@ -66,7 +68,8 @@ public class Picture {
         sun2.makeVisible();
     }
 public void slowMoveVertical(int distance) {
-      sun.slowMoveVertical(distance);
+    if (fixe)
+      sun2.slowMoveVertical(distance);
     }
     /**
      * Change this picture to black/white display
