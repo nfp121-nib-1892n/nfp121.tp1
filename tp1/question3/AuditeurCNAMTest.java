@@ -128,4 +128,8 @@ public void test_nouveau() {
         assertEquals(" nom avec accent (é devient e) ? ", "chloe_c",
             auditeur1.login());
     }
+
+    public void testSpecial()
+    {
+    }
 }
