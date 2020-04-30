@@ -54,8 +54,8 @@ public void fixOrUnfixTerre(){
 
         sun = new Circle();
         sun2 = new Circle();
-        sun.changeColor("yellow");
-        sun2.changeColor("blue");
+        sun.changeColor("blue");
+        sun2.changeColor("yellow");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         
@@ -67,9 +67,16 @@ public void fixOrUnfixTerre(){
         sun2.changeSize(60);
         sun2.makeVisible();
     }
-public void slowMoveVertical(int distance) {
-    if (fixe)
-      sun2.slowMoveVertical(distance);
+ public void slowMoveVerticalSun(){
+        if(!fixe){
+            fixe = true;
+            sun.slowMoveVertical(250);
+        }
+    }
+    public void sleep(){
+        if(fixe){
+            sun.slowMoveVertical(-250);
+        }
     }
     /**
      * Change this picture to black/white display

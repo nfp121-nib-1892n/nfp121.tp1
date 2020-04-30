@@ -119,15 +119,7 @@ public void test_nouveau() {
         assertEquals("nom court avec particules ? ", "te_te_m",
             auditeur1.login());
     }
-public void test_extra() {
 
-        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("Te$-Te",
-                "max", "12345");
-        assertEquals("Mr Te-Te max ", "Te-Te", auditeur1.nom());
-        assertEquals("Mr Te-Te max ", "max", auditeur1.prenom());
-        assertEquals("nom court avec particules ? ", "te_te_m",
-            auditeur1.login());
-    }
     public void test_nom_avec_accent() {
         question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("Chloé",
                 "chloé", "12345");
@@ -139,5 +131,8 @@ public void test_extra() {
 
     public void testSpecial()
     {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("durant",
+                "kevin", "3033");
+        assertEquals(8, auditeur1.login().length());
     }
 }

@@ -47,12 +47,27 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
+        String toReturn="";
+        if (this.nom !=null && this.prenom !=null){
         String nom=nom().length()>6 ? nom().substring(0,6) : nom();
+        
         String prenom=prenom().substring(0,1);
-        String regex="[$&+,:;=?@#|'<>.^*()%!-]";
-        return (nom+"_"+prenom).toLowerCase().replaceAll("-","_")
-        .replaceAll("é","e").replaceAll(" ","_").replaceAll(",","_").replaceAll(regex,"");//
+        
+        //String regex="[$&+,:;=?@#|'<>.^*()%!-]";
+        toReturn = (nom+"_"+prenom).toLowerCase().replaceAll("-","_")
+        .replaceAll("é","e")
+        .replaceAll(" ","_")
+        .replaceAll(",","_")
+        //.replaceAll(regex,"")
+       
+       .replaceAll("è", "e")//
+       .replaceAll("ê", "e")
+       .replaceAll("à", "a")
+       .replaceAll("â", "a")
+       .replaceAll("[^a-z0-9]", "_");
     }
+    return toReturn;
+}
 
     /**
      * Lecture du nom de l'auditeur.
